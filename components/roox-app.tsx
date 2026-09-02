@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { pages, type PageId } from '@/lib/pages';
 import { Documentation } from '@/components/documentation';
+import { HeroScene } from '@/components/hero-scene';
 
 type Provider = {
   id: string; name: string; model: string; gpu: string; region: string;
@@ -27,7 +28,6 @@ const providers: Provider[] = [
 ];
 
 export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found' }) {
-  const hero = useRef<HTMLDivElement>(null);
   const checkout = useRef<HTMLDialogElement>(null);
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('All models');
@@ -64,12 +64,6 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
     const q = query.trim().toLowerCase();
     return providers.filter((p) => (!q || [p.name, p.model, p.gpu, p.region].join(' ').toLowerCase().includes(q)) && (filter === 'All models' || p.kind === filter));
   }, [filter, query]);
-
-  function moveHero(event: React.PointerEvent<HTMLDivElement>) {
-    const rect = event.currentTarget.getBoundingClientRect();
-    hero.current?.style.setProperty('--pointer-x', String(((event.clientX - rect.left) / rect.width - .5) * -18) + 'px');
-    hero.current?.style.setProperty('--pointer-y', String(((event.clientY - rect.top) / rect.height - .5) * -12) + 'px');
-  }
 
   async function connect() {
     setNote('');
@@ -112,10 +106,10 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
       {page !== 'home' && note && <output className="block mx-auto max-w-[1480px] px-5 pt-6 text-xs text-white/55 lg:px-10">{note}</output>}
 
       {page === 'home' && <section id="top" className="border-b border-white/[.08] pt-16">
-        <div ref={hero} onPointerMove={moveHero} onPointerLeave={() => { hero.current?.style.setProperty('--pointer-x', '0px'); hero.current?.style.setProperty('--pointer-y', '0px'); }} className="hero-stage relative min-h-[694px] overflow-hidden">
-          <img className="hero-art absolute inset-0 h-full w-full object-cover object-center" src="/kyros-hero.png" alt="A suspended compute core between two wireframe hands" />
+        <div className="hero-stage relative min-h-[694px] overflow-hidden">
+          <HeroScene />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,9,8,.2),rgba(8,9,8,.03)_42%,rgba(8,9,8,.9))]" />
-          <div className="hero-grid absolute inset-0" /><div className="light-sweep absolute inset-y-0 w-1/3" /><div className="noise pointer-events-none absolute inset-0 opacity-[.14]" />
+          <div className="hero-grid absolute inset-0" /><div className="noise pointer-events-none absolute inset-0 opacity-[.14]" />
           <div className="relative z-10 mx-auto flex min-h-[694px] max-w-[1480px] flex-col px-5 pb-8 pt-16 lg:px-10 lg:pt-20">
             <div className="flex items-start justify-between">
               <Badge className="h-7 rounded-full border border-white/15 bg-black/25 px-3 text-[10px] uppercase tracking-[.14em] text-white/75 backdrop-blur-md"><Sparkles data-icon="inline-start" className="text-[#c8ff30]" />The open inference layer</Badge>
