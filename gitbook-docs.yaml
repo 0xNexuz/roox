@@ -1,0 +1,12 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Kyros Documentation
+  structure:
+    - type: space
+      key: kyros-docs
+      title: Kyros Documentation
+      path: docs
+      default: true
+      content:
+        directory: ./docs
+        language: en

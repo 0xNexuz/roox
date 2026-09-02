@@ -96,7 +96,7 @@ npx vite build --config vercel.vite.config.ts
 
 ## Documentation
 
-The GitBook-ready handbook lives in [docs](./docs/README.md). Its navigation is defined in [docs/SUMMARY.md](./docs/SUMMARY.md), and `.gitbook.yaml` points GitBook at that directory.
+The GitBook-ready handbook lives in [docs](./docs/README.md). Its navigation is defined in [docs/SUMMARY.md](./docs/SUMMARY.md), while `gitbook-docs.yaml` maps the GitBook site to that directory. The legacy `.gitbook.yaml` remains for space-level compatibility.
 
 ## Contributing
 
