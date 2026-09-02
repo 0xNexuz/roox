@@ -66,8 +66,10 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[.07] bg-[#080908]/75 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1480px] items-center justify-between px-5 lg:px-10">
           <a href="#top" className="flex items-center gap-3" aria-label="Kyros home">
-            <span className="grid size-8 place-items-center rounded-full border border-[#c8ff30]/50 bg-[#c8ff30]/10 shadow-[0_0_35px_rgba(200,255,48,.16)]"><span className="size-2.5 rotate-45 border border-[#c8ff30]" /></span>
-            <span className="text-[17px] font-semibold tracking-[-.04em]">KYROS</span>
+            <span className="relative grid size-9 place-items-center overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_0_32px_rgba(200,255,48,.16)]">
+              <img src="/kyros-mark.png" alt="" aria-hidden="true" className="size-10 scale-[1.36] object-contain" />
+            </span>
+            <span className="text-[17px] font-semibold tracking-[-.055em]">KYROS</span>
           </a>
           <nav className="hidden gap-7 text-xs text-white/55 md:flex"><a href="#market">Marketplace</a><a href="#protocol">Protocol</a><a href="#providers">Provide compute</a></nav>
           <div className="flex items-center gap-2">

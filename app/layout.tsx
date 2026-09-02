@@ -16,6 +16,11 @@ export const metadata: Metadata = {
   title: 'Kyros - The open inference layer',
   description:
     'Rent verified GPU capacity for AI inference and pay per completed call on Robinhood Chain.',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/kyros-mark.png',
+  },
   openGraph: {
     title: 'Kyros - The open inference layer',
     description:
