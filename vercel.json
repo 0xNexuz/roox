@@ -2,7 +2,16 @@
   "buildCommand": "npx vite build --config vercel.vite.config.ts",
   "outputDirectory": "vercel-dist",
   "cleanUrls": true,
+  "functions": {
+    "api/inference.ts": { "maxDuration": 30 }
+  },
   "redirects": [
+    {
+      "source": "/",
+      "destination": "https://useroox.vercel.app/",
+      "permanent": true,
+      "has": [{ "type": "host", "value": { "eq": "usekyros.vercel.app" } }]
+    },
     {
       "source": "/:path*",
       "destination": "https://useroox.vercel.app/:path*",

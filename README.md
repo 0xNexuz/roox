@@ -16,12 +16,13 @@
 
 Roox is a product prototype for a decentralized inference marketplace. GPU owners list available capacity and supported models; developers choose a provider by model, price, latency, and region; settlement is designed to happen per verified inference call on Robinhood Chain.
 
-The current repository ships the complete interactive frontend. Wallet connection and Robinhood Chain switching are implemented. Provider capacity, inference execution, receipts, and settlement are currently simulated and are documented as the next protocol layer to build.
+The repository ships a four-page interactive frontend plus a disabled-by-default, operator-only inference pilot. Wallet connection and Robinhood Chain switching are implemented. Marketplace capacity and checkout execution remain simulated; the pilot is separate from checkout and needs a real model-serving endpoint before use. Signed receipts and settlement are not implemented.
 
 > Roox is an independent prototype. It is not an official Robinhood product and is not endorsed by Robinhood.
 
 ## Product experience
 
+- Navigate Overview (`/`), Marketplace (`/market`), Provide Compute (`/providers`), and Documentation (`/docs`).
 - Search and filter inference providers by model, GPU, and region.
 - Compare per-call price, latency, uptime, and available workers.
 - Connect an injected EVM wallet and switch to Robinhood Chain (chain ID 4663).
@@ -37,7 +38,9 @@ The current repository ships the complete interactive frontend. Wallet connectio
 | Provider discovery and filtering | Implemented with seeded demo data |
 | EVM wallet connection | Implemented |
 | Robinhood Chain add/switch | Implemented |
-| Inference execution | Simulated |
+| Marketplace inference checkout | Simulated, no funds spent |
+| Operator inference gateway | Implemented, disabled until configured and tested with a worker |
+| Customer accounts, durable quotas, billing | Not implemented |
 | Signed inference receipts | Planned |
 | Onchain settlement contracts | Planned |
 | Provider worker and registry | Planned |
@@ -56,7 +59,7 @@ flowchart LR
     S --> C[Robinhood Chain]
 ```
 
-Today, this repository implements the marketplace experience and wallet/network interaction. The router, worker, receipt verifier, and settlement contract are the planned backend and protocol services.
+The diagram is the target architecture, not a claim that these services are live. Today the marketplace and wallet interaction are implemented, together with a protected single-worker pilot gateway. Provider discovery is seeded, and a real worker connection, receipt verifier, and settlement contract are still required.
 
 ## Run locally
 
@@ -84,14 +87,29 @@ npm run build
 Build the Vercel static target:
 
 ```bash
-npx vite build --config vercel.vite.config.ts
+npm run build:vercel
 ```
+
+Run the automated route and pilot safety tests:
+
+```bash
+npm test
+npx tsc --noEmit
+```
+
+## Private inference pilot
+
+`POST /api/inference` is an operator-only, non-streaming bridge to one explicitly configured HTTPS model server. It is **not connected to the demo checkout**. Without complete server-side configuration it returns HTTP 503 and never calls a worker.
+
+See [Pilot setup and limits](./docs/developers/inference-pilot.md) and `.env.example`. Never put the operator or worker key in frontend code. Payments remain disabled. Automated tests use mocked workers; they do not establish that a real GPU is connected.
 
 ## Deployment
 
 - Production: [useroox.vercel.app](https://useroox.vercel.app)
 - Private Sites build: [kyros.elllbest7.chatgpt.site](https://kyros.elllbest7.chatgpt.site)
-- Vercel uses `vercel.json` and `vercel.vite.config.ts`.
+- Vercel uses `vercel.json`, `vercel.vite.config.ts`, and `api/inference.ts`.
+- All four pages support direct URLs and refreshes. Unknown URLs return 404.
+- The legacy `usekyros.vercel.app` host redirects to the matching Roox path with HTTP 308.
 - Sites uses Vinext, `vite.config.ts`, and `.openai/hosting.json`.
 
 ## Documentation

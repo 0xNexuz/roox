@@ -11,11 +11,22 @@
 - [x] Vercel and Sites deployments
 - [x] GitBook-ready documentation
 
+## Private pilot — In progress
+
+- [x] Four-page navigation without changing the visual system
+- [x] Operator-key-protected, disabled-by-default inference gateway
+- [x] Request bounds, fixed model/worker, timeout, and per-instance safety guards
+- [x] Mocked-worker and routing tests
+- [ ] Connect and validate a real GPU worker end to end
+- [ ] Durable quotas, operator monitoring, and incident controls
+
+This pilot is separate from the public simulated checkout and does not enable customer billing.
+
 ## Phase 1 — Usable inference network
 
 - [ ] Provider registry service
 - [ ] GPU worker reference implementation
-- [ ] Inference gateway
+- [ ] Public multi-provider inference gateway
 - [ ] API keys and request limits
 - [ ] Live provider health and capacity
 - [ ] Streaming model responses

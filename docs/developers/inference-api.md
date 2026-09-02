@@ -1,7 +1,7 @@
 # Inference API
 
 {% hint style="warning" %}
-This is a proposed API contract for the next Roox backend. It is not implemented by the current repository.
+The `/v1/inference` contract below is proposed and is not implemented. The repository now includes a separate, operator-only `/api/inference` pilot; see [Pilot setup](inference-pilot.md). Do not use the proposed payload or key format with that pilot.
 {% endhint %}
 
 ## Create an inference call

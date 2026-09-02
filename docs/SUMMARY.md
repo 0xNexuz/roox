@@ -8,7 +8,8 @@
 * Developers
   * [Architecture](developers/architecture.md)
   * [Wallet and network](developers/wallet-and-network.md)
-  * [Inference API](developers/inference-api.md)
+  * [Private inference pilot](developers/inference-pilot.md)
+  * [Proposed inference API](developers/inference-api.md)
 * [Providers](providers/provider-guide.md)
 * [Deployment](deployment.md)
 * [Roadmap](roadmap.md)

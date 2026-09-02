@@ -1,0 +1,10 @@
+references/
+.git/
+.wrangler/
+dist/
+vercel-dist/
+outputs/
+tests/
+*.tar.gz
+*.tsbuildinfo
+.env*

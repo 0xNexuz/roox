@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import Home from './app/page';
+import RooxApp from './components/roox-app';
+import { resolvePage } from './lib/pages';
 import './app/globals.css';
 
 const root = document.getElementById('root');
@@ -11,6 +12,6 @@ if (!root) {
 
 createRoot(root).render(
   <StrictMode>
-    <Home />
+    <RooxApp page={resolvePage(window.location.pathname)} />
   </StrictMode>,
 );
