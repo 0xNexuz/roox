@@ -7,7 +7,7 @@
 
   Rent spare GPU capacity, route an inference request, and settle only for completed work.
 
-  [Live app](https://roox.vercel.app) · [Documentation](https://magnum-inc.gitbook.io/roox) · [Robinhood Chain](https://robinhoodchain.blockscout.com)
+  [Live app](https://useroox.vercel.app) · [Documentation](https://magnum-inc.gitbook.io/roox) · [Robinhood Chain](https://robinhoodchain.blockscout.com)
 </div>
 
 ---
@@ -89,7 +89,7 @@ npx vite build --config vercel.vite.config.ts
 
 ## Deployment
 
-- Production: [roox.vercel.app](https://roox.vercel.app)
+- Production: [useroox.vercel.app](https://useroox.vercel.app)
 - Private Sites build: [kyros.elllbest7.chatgpt.site](https://kyros.elllbest7.chatgpt.site)
 - Vercel uses `vercel.json` and `vercel.vite.config.ts`.
 - Sites uses Vinext, `vite.config.ts`, and `.openai/hosting.json`.

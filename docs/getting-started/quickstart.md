@@ -2,7 +2,7 @@
 
 ## Try the product
 
-Open [roox.vercel.app](https://roox.vercel.app).
+Open [useroox.vercel.app](https://useroox.vercel.app).
 
 1. Search for a model, GPU type, provider, or region.
 2. Filter the marketplace by language, reasoning, or image workloads.

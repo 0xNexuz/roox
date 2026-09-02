@@ -22,7 +22,7 @@ Roox is currently a frontend prototype. Wallet connection and Robinhood Chain sw
 
 ## Links
 
-- [Live application](https://roox.vercel.app)
+- [Live application](https://useroox.vercel.app)
 - [GitHub repository](https://github.com/0xNexuz/roox)
 - [Robinhood Chain explorer](https://robinhoodchain.blockscout.com)
 

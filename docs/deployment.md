@@ -4,7 +4,7 @@ Roox has two independent production targets.
 
 ## Vercel
 
-The public application is [roox.vercel.app](https://roox.vercel.app).
+The public application is [useroox.vercel.app](https://useroox.vercel.app).
 
 Configuration:
 
