@@ -1,11 +1,11 @@
-# How Kyros works
+# How Roox works
 
-Kyros separates discovery, execution, verification, and payment.
+Roox separates discovery, execution, verification, and payment.
 
 ```mermaid
 sequenceDiagram
     participant D as Developer
-    participant K as Kyros router
+    participant K as Roox router
     participant W as GPU worker
     participant V as Receipt verifier
     participant C as Settlement contract

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kyros - The open inference layer',
+  title: 'Roox - The open inference layer',
   description:
     'Rent verified GPU capacity for AI inference and pay per completed call on Robinhood Chain.',
   icons: {
@@ -22,14 +22,14 @@ export const metadata: Metadata = {
     apple: '/kyros-mark.png',
   },
   openGraph: {
-    title: 'Kyros - The open inference layer',
+    title: 'Roox - The open inference layer',
     description:
       'Rent verified GPU capacity for AI inference and pay per completed call on Robinhood Chain.',
     images: ['/og.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Kyros - The open inference layer',
+    title: 'Roox - The open inference layer',
     description:
       'Rent verified GPU capacity for AI inference and pay per completed call on Robinhood Chain.',
     images: ['/og.png'],

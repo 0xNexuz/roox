@@ -1,24 +1,24 @@
 <div align="center">
-  <img src="./public/kyros-mark.png" alt="Kyros logo" width="112" />
+  <img src="./public/kyros-mark.png" alt="Roox logo" width="112" />
 
-  # Kyros
+  # Roox
 
   **The open marketplace for pay-per-call AI inference.**
 
   Rent spare GPU capacity, route an inference request, and settle only for completed work.
 
-  [Live app](https://usekyros.vercel.app) · [Documentation](./docs/README.md) · [Robinhood Chain](https://robinhoodchain.blockscout.com)
+  [Live app](https://roox.vercel.app) · [Documentation](https://magnum-inc.gitbook.io/roox) · [Robinhood Chain](https://robinhoodchain.blockscout.com)
 </div>
 
 ---
 
-## What is Kyros?
+## What is Roox?
 
-Kyros is a product prototype for a decentralized inference marketplace. GPU owners list available capacity and supported models; developers choose a provider by model, price, latency, and region; settlement is designed to happen per verified inference call on Robinhood Chain.
+Roox is a product prototype for a decentralized inference marketplace. GPU owners list available capacity and supported models; developers choose a provider by model, price, latency, and region; settlement is designed to happen per verified inference call on Robinhood Chain.
 
 The current repository ships the complete interactive frontend. Wallet connection and Robinhood Chain switching are implemented. Provider capacity, inference execution, receipts, and settlement are currently simulated and are documented as the next protocol layer to build.
 
-> Kyros is an independent prototype. It is not an official Robinhood product and is not endorsed by Robinhood.
+> Roox is an independent prototype. It is not an official Robinhood product and is not endorsed by Robinhood.
 
 ## Product experience
 
@@ -48,7 +48,7 @@ The numbers shown in the hero and provider cards are illustrative demo data, not
 
 ```mermaid
 flowchart LR
-    U[Developer] --> M[Kyros marketplace]
+    U[Developer] --> M[Roox marketplace]
     M --> R[Inference router]
     R --> W[GPU worker]
     W --> P[Signed receipt]
@@ -67,8 +67,8 @@ Requirements:
 - An injected EVM wallet if you want to test wallet connection
 
 ```bash
-git clone https://github.com/0xNexuz/kyros.git
-cd kyros
+git clone https://github.com/0xNexuz/roox.git
+cd roox
 npm install
 npm run dev
 ```
@@ -89,7 +89,7 @@ npx vite build --config vercel.vite.config.ts
 
 ## Deployment
 
-- Production: [usekyros.vercel.app](https://usekyros.vercel.app)
+- Production: [roox.vercel.app](https://roox.vercel.app)
 - Private Sites build: [kyros.elllbest7.chatgpt.site](https://kyros.elllbest7.chatgpt.site)
 - Vercel uses `vercel.json` and `vercel.vite.config.ts`.
 - Sites uses Vinext, `vite.config.ts`, and `.openai/hosting.json`.

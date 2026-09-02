@@ -1,9 +1,9 @@
 # Table of contents
 
-* [Kyros documentation](README.md)
+* [Roox documentation](README.md)
 * [Getting started](getting-started/quickstart.md)
 * Product
-  * [How Kyros works](product/how-it-works.md)
+  * [How Roox works](product/how-it-works.md)
   * [Current implementation](product/current-implementation.md)
 * Developers
   * [Architecture](developers/architecture.md)

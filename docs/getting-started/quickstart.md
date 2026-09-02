@@ -2,7 +2,7 @@
 
 ## Try the product
 
-Open [usekyros.vercel.app](https://usekyros.vercel.app).
+Open [roox.vercel.app](https://roox.vercel.app).
 
 1. Search for a model, GPU type, provider, or region.
 2. Filter the marketplace by language, reasoning, or image workloads.
@@ -14,7 +14,7 @@ The call flow is simulated and never spends funds.
 
 ## Connect a wallet
 
-Select **Connect** in the header. Kyros requests an injected EVM wallet, switches to Robinhood Chain, and asks for account access. If the chain is missing, Kyros offers to add it.
+Select **Connect** in the header. Roox requests an injected EVM wallet, switches to Robinhood Chain, and asks for account access. If the chain is missing, Roox offers to add it.
 
 Rejecting either wallet request leaves the wallet unchanged.
 
@@ -26,8 +26,8 @@ Requirements:
 - npm
 
 ```bash
-git clone https://github.com/0xNexuz/kyros.git
-cd kyros
+git clone https://github.com/0xNexuz/roox.git
+cd roox
 npm install
 npm run dev
 ```

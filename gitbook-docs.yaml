@@ -1,10 +1,10 @@
 $schema: https://api.gitbook.com/gitbook-docs.yaml
 site:
-  title: Kyros Documentation
+  title: Roox Documentation
   structure:
     - type: space
       key: kyros-docs
-      title: Kyros Documentation
+      title: Roox Documentation
       path: docs
       default: true
       content:

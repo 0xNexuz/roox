@@ -6,7 +6,7 @@ The provider software described here is planned. No worker binary or registratio
 
 ## Intended provider journey
 
-1. Install the Kyros worker.
+1. Install the Roox worker.
 2. Connect a payout wallet.
 3. Register hardware and region.
 4. Select one or more supported models.

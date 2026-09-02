@@ -1,6 +1,6 @@
 # Wallet and network
 
-Kyros uses the injected EIP-1193 provider exposed as `window.ethereum`.
+Roox uses the injected EIP-1193 provider exposed as `window.ethereum`.
 
 ## Network configuration
 

@@ -44,7 +44,7 @@ export default function Home() {
   async function connect() {
     setNote('');
     const eth = (window as unknown as { ethereum?: { request: (a: { method: string; params?: unknown[] }) => Promise<unknown> } }).ethereum;
-    if (!eth) return setNote('Open Kyros in an EVM wallet to connect.');
+    if (!eth) return setNote('Open Roox in an EVM wallet to connect.');
     try {
       try { await eth.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: '0x1237' }] }); }
       catch {
@@ -65,11 +65,11 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[.07] bg-[#080908]/75 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1480px] items-center justify-between px-5 lg:px-10">
-          <a href="#top" className="flex items-center gap-3" aria-label="Kyros home">
+          <a href="#top" className="flex items-center gap-3" aria-label="Roox home">
             <span className="relative grid size-9 place-items-center overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_0_32px_rgba(200,255,48,.16)]">
               <img src="/kyros-mark.png" alt="" aria-hidden="true" className="size-10 scale-[1.36] object-contain" />
             </span>
-            <span className="text-[17px] font-semibold tracking-[-.055em]">KYROS</span>
+            <span className="text-[17px] font-semibold tracking-[-.055em]">ROOX</span>
           </a>
           <nav className="hidden gap-7 text-xs text-white/55 md:flex"><a href="#market">Marketplace</a><a href="#protocol">Protocol</a><a href="#providers">Provide compute</a></nav>
           <div className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-[1480px] lg:grid-cols-[.9fr_1.1fr]">
           <div className="relative overflow-hidden border-white/[.08] px-5 py-20 lg:border-r lg:px-10 lg:py-28">
             <div className="absolute inset-0 opacity-40 [background:radial-gradient(circle_at_30%_20%,rgba(200,255,48,.16),transparent_30%)]" />
-            <p className="relative text-[10px] uppercase tracking-[.18em] text-[#c8ff30]">The protocol</p><h2 className="relative mt-4 text-4xl font-medium leading-[.95] tracking-[-.055em] sm:text-6xl">Trust the proof,<br /><span className="text-white/40">not the promise.</span></h2><p className="relative mt-6 max-w-md text-sm leading-6 text-white/50">Kyros meters signed inference receipts. Funds move only when a provider returns a verified result.</p>
+            <p className="relative text-[10px] uppercase tracking-[.18em] text-[#c8ff30]">The protocol</p><h2 className="relative mt-4 text-4xl font-medium leading-[.95] tracking-[-.055em] sm:text-6xl">Trust the proof,<br /><span className="text-white/40">not the promise.</span></h2><p className="relative mt-6 max-w-md text-sm leading-6 text-white/50">Roox meters signed inference receipts. Funds move only when a provider returns a verified result.</p>
           </div>
           <div className="grid sm:grid-cols-3"><Step icon={<Box />} n="01" title="Match" body="Choose a model, price, and performance target." /><Step icon={<Zap />} n="02" title="Infer" body="The request routes to a verified worker." border /><Step icon={<Check />} n="03" title="Settle" body="A signed receipt releases payment onchain." border /></div>
         </div>
@@ -153,11 +153,11 @@ export default function Home() {
       <section id="providers" className="mx-auto max-w-[1480px] px-5 py-20 lg:px-10 lg:py-28">
         <div className="relative overflow-hidden rounded-[28px] bg-white p-8 text-black sm:p-12 lg:p-16">
           <div className="absolute -right-24 -top-32 size-80 rounded-full border-[40px] border-[#c8ff30]/45" />
-          <div className="relative max-w-3xl"><p className="text-[10px] font-semibold uppercase tracking-[.18em]">For GPU owners</p><h2 className="mt-4 text-5xl font-medium leading-[.9] tracking-[-.065em] sm:text-7xl">Idle silicon<br />is wasted potential.</h2><p className="mt-6 max-w-xl text-sm leading-6 text-black/55">Install the Kyros worker, set your model and price, then earn on every verified inference your machine completes.</p><Button className="mt-8 h-11 rounded-full bg-black px-5 text-sm text-white">Become a provider <ExternalLink data-icon="inline-end" /></Button></div>
+          <div className="relative max-w-3xl"><p className="text-[10px] font-semibold uppercase tracking-[.18em]">For GPU owners</p><h2 className="mt-4 text-5xl font-medium leading-[.9] tracking-[-.065em] sm:text-7xl">Idle silicon<br />is wasted potential.</h2><p className="mt-6 max-w-xl text-sm leading-6 text-black/55">Install the Roox worker, set your model and price, then earn on every verified inference your machine completes.</p><Button className="mt-8 h-11 rounded-full bg-black px-5 text-sm text-white">Become a provider <ExternalLink data-icon="inline-end" /></Button></div>
         </div>
       </section>
 
-      <footer className="border-t border-white/[.08] px-5 py-8"><div className="mx-auto flex max-w-[1480px] justify-between text-[10px] uppercase tracking-[.13em] text-white/30"><p>2026 Kyros Protocol</p><p>Settled on Robinhood Chain.</p></div></footer>
+      <footer className="border-t border-white/[.08] px-5 py-8"><div className="mx-auto flex max-w-[1480px] justify-between text-[10px] uppercase tracking-[.13em] text-white/30"><p>2026 Roox Protocol</p><p>Settled on Robinhood Chain.</p></div></footer>
 
       {selected && <div className="fixed inset-0 z-[80] grid place-items-center bg-black/75 p-4 backdrop-blur-xl" role="dialog" aria-modal="true">
         <div className="w-full max-w-md overflow-hidden rounded-[24px] border border-white/12 bg-[#111311]">

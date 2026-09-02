@@ -6,7 +6,7 @@ import './app/globals.css';
 const root = document.getElementById('root');
 
 if (!root) {
-  throw new Error('Kyros root element was not found.');
+  throw new Error('Roox root element was not found.');
 }
 
 createRoot(root).render(

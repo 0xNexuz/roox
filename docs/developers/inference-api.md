@@ -1,7 +1,7 @@
 # Inference API
 
 {% hint style="warning" %}
-This is a proposed API contract for the next Kyros backend. It is not implemented by the current repository.
+This is a proposed API contract for the next Roox backend. It is not implemented by the current repository.
 {% endhint %}
 
 ## Create an inference call

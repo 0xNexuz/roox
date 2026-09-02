@@ -1,10 +1,10 @@
 # Deployment
 
-Kyros has two independent production targets.
+Roox has two independent production targets.
 
 ## Vercel
 
-The public application is [usekyros.vercel.app](https://usekyros.vercel.app).
+The public application is [roox.vercel.app](https://roox.vercel.app).
 
 Configuration:
 
