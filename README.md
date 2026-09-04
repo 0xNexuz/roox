@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/kyros-mark.png" alt="Roox logo" width="112" />
+  <img src="./public/roox-mark.svg" alt="Roox logo" width="112" />
 
   # Roox
 
