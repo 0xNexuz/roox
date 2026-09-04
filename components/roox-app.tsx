@@ -89,9 +89,11 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
     <main className={'min-h-screen overflow-hidden bg-background text-foreground' + (page === 'home' ? '' : ' pt-16')}>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[.07] bg-[#080908]/75 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-[1480px] items-center justify-between px-5 lg:px-10">
-          <a href="/" className="flex items-center gap-3" aria-label="Roox home">
-            <span className="relative grid size-9 place-items-center overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_0_32px_rgba(200,255,48,.16)]">
-              <img src="/kyros-mark.png" alt="" aria-hidden="true" className="size-10 scale-[1.36] object-contain" />
+          <a href="/" className="group flex items-center gap-3" aria-label="Roox home">
+            <span className="relative grid size-9 shrink-0 place-items-center" aria-hidden="true">
+              <span className="absolute inset-1 rounded-full bg-[#c8ff30]/20 blur-[8px] transition-opacity duration-300 group-hover:opacity-100" />
+              <span className="absolute inset-0 rounded-[12px] border border-white/10 bg-white/[.025] shadow-[inset_0_1px_0_rgba(255,255,255,.05)]" />
+              <img src="/roox-mark.svg" alt="" className="relative size-[25px] object-contain drop-shadow-[0_0_9px_rgba(200,255,48,.22)] transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3" />
             </span>
             <span className="text-[17px] font-semibold tracking-[-.055em]">ROOX</span>
           </a>
