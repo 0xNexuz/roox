@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   description:
     'Rent verified GPU capacity for AI inference and pay per completed call on Robinhood Chain.',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/kyros-mark.png',
+    icon: '/roox-mark.svg',
+    shortcut: '/roox-mark.svg',
+    apple: '/roox-mark.svg',
   },
   openGraph: {
     title: 'Roox - The open inference layer',
