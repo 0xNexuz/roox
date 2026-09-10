@@ -12,6 +12,11 @@ import { pages, type PageId } from '@/lib/pages';
 import { Documentation } from '@/components/documentation';
 import { HeroScene } from '@/components/hero-scene';
 
+const ROOX_CONTRACT_ADDRESS =
+  "0xYOUR_REAL_CONTRACT_ADDRESS";
+
+const ROOX_CONTRACT_EXPLORER =
+  `https://robinhoodchain.blockscout.com/address/${ROOX_CONTRACT_ADDRESS}`;
 type Provider = {
   id: string; name: string; model: string; gpu: string; region: string;
   price: number; latency: number; uptime: string; available: number;
@@ -115,7 +120,20 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
           <div className="relative z-10 mx-auto flex min-h-[694px] max-w-[1480px] flex-col px-5 pb-8 pt-16 lg:px-10 lg:pt-20">
             <div className="flex items-start justify-between">
               <Badge className="h-7 rounded-full border border-white/15 bg-black/25 px-3 text-[10px] uppercase tracking-[.14em] text-white/75 backdrop-blur-md"><Sparkles data-icon="inline-start" className="text-[#c8ff30]" />The open inference layer</Badge>
-              <div className="hidden text-right font-mono text-[9px] uppercase leading-5 tracking-[.12em] text-white/35 lg:block"><p>Chain / 4663</p><p>Settlement / ETH</p><p>Market / permissionless</p></div>
+              <div className="hidden text-right font-mono text-[9px] uppercase leading-5 tracking-[.12em] text-white/35 lg:block"<p>Chain / 4663</p>
+<p>Settlement / ETH</p>
+
+<a
+  href={ROOX_CONTRACT_EXPLORER}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hover:text-[#c8ff30]"
+>
+  Contract / {ROOX_CONTRACT_ADDRESS.slice(0, 6)}...
+  {ROOX_CONTRACT_ADDRESS.slice(-4)}
+</a>
+
+<p>Market / permissionless</p>
             </div>
             <div className="mx-auto mt-10 max-w-5xl text-center lg:mt-6">
               <p className="mb-3 text-xs font-medium uppercase tracking-[.22em] text-[#c8ff30]">Your model. Their silicon.</p>
