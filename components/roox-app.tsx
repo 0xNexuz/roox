@@ -119,22 +119,46 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
           <div className="hero-grid absolute inset-0" /><div className="noise pointer-events-none absolute inset-0 opacity-[.14]" />
           <div className="relative z-10 mx-auto flex min-h-[694px] max-w-[1480px] flex-col px-5 pb-8 pt-16 lg:px-10 lg:pt-20">
             <div className="flex items-start justify-between">
-              <Badge className="h-7 rounded-full border border-white/15 bg-black/25 px-3 text-[10px] uppercase tracking-[.14em] text-white/75 backdrop-blur-md"><Sparkles data-icon="inline-start" className="text-[#c8ff30]" />The open inference layer</Badge>
-              <div className="hidden text-right font-mono text-[9px] uppercase leading-5 tracking-[.12em] text-white/35 lg:block"<p>Chain / 4663</p>
-<p>Settlement / ETH</p>
+  <Badge className="h-7 rounded-full border border-white/15 bg-black/25 px-3 text-[10px] uppercase tracking-[.14em] text-white/75 backdrop-blur-md">
+    <Sparkles
+      data-icon="inline-start"
+      className="text-[#c8ff30]"
+    />
+    The open inference layer
+  </Badge>
 
-<a
-  href={ROOX_CONTRACT_EXPLORER}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="hover:text-[#c8ff30]"
->
-  Contract / {ROOX_CONTRACT_ADDRESS.slice(0, 6)}...
-  {ROOX_CONTRACT_ADDRESS.slice(-4)}
-</a>
+  <div className="text-right font-mono text-[9px] uppercase leading-5 tracking-[.12em] text-white/35">
+    <p>Chain / 4663</p>
+    <p>Settlement / ETH</p>
 
-<p>Market / permissionless</p>
-            </div>
+    <div className="flex items-center justify-end gap-2">
+      <a
+        href={ROOX_CONTRACT_EXPLORER}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="transition-colors hover:text-[#c8ff30]"
+        title={ROOX_CONTRACT_ADDRESS}
+      >
+        Contract / {ROOX_CONTRACT_ADDRESS.slice(0, 6)}...
+        {ROOX_CONTRACT_ADDRESS.slice(-4)}
+      </a>
+
+      <button
+        type="button"
+        onClick={() =>
+          void navigator.clipboard?.writeText(ROOX_CONTRACT_ADDRESS)
+        }
+        className="text-white/35 transition-colors hover:text-[#c8ff30]"
+        aria-label="Copy contract address"
+        title="Copy contract address"
+      >
+        Copy
+      </button>
+    </div>
+
+    <p>Market / permissionless</p>
+  </div>
+</div>
             <div className="mx-auto mt-10 max-w-5xl text-center lg:mt-6">
               <p className="mb-3 text-xs font-medium uppercase tracking-[.22em] text-[#c8ff30]">Your model. Their silicon.</p>
               <h1 className="text-balance text-[clamp(3.5rem,8.4vw,8.2rem)] font-medium leading-[.82] tracking-[-.075em]">Compute without<br /><span className="text-white/50">the cloud.</span></h1>
