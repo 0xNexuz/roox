@@ -127,37 +127,11 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
     The open inference layer
   </Badge>
 
-  <div className="text-right font-mono text-[9px] uppercase leading-5 tracking-[.12em] text-white/35">
-    <p>Chain / 4663</p>
-    <p>Settlement / ETH</p>
-
-    <div className="flex items-center justify-end gap-2">
-      <a
-        href={ROOX_CONTRACT_EXPLORER}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="transition-colors hover:text-[#c8ff30]"
-        title={ROOX_CONTRACT_ADDRESS}
-      >
-        Contract / {ROOX_CONTRACT_ADDRESS.slice(0, 6)}...
-        {ROOX_CONTRACT_ADDRESS.slice(-4)}
-      </a>
-
-      <button
-        type="button"
-        onClick={() =>
-          void navigator.clipboard?.writeText(ROOX_CONTRACT_ADDRESS)
-        }
-        className="text-white/35 transition-colors hover:text-[#c8ff30]"
-        aria-label="Copy contract address"
-        title="Copy contract address"
-      >
-        Copy
-      </button>
-    </div>
-
-    <p>Market / permissionless</p>
-  </div>
+  <div className="hidden text-right font-mono text-[9px] uppercase leading-5 tracking-[.12em] text-white/35 lg:block">
+  <p>Chain / 4663</p>
+  <p>Settlement / ETH</p>
+  <p>Market / permissionless</p>
+</div>
 </div>
             <div className="mx-auto mt-10 max-w-5xl text-center lg:mt-6">
               <p className="mb-3 text-xs font-medium uppercase tracking-[.22em] text-[#c8ff30]">Your model. Their silicon.</p>
@@ -167,6 +141,40 @@ export default function RooxApp({ page = 'home' }: { page?: PageId | 'not-found'
                 <Button render={<a href="/market" aria-label="Explore compute" />} className="h-11 rounded-full bg-[#c8ff30] px-5 text-sm font-semibold text-black shadow-[0_0_44px_rgba(200,255,48,.18)] hover:bg-[#d6ff61]">Explore compute <ArrowDownRight data-icon="inline-end" /></Button>
                 <Button render={<a href="/providers" aria-label="List your GPU" />} variant="outline" className="h-11 rounded-full border-white/18 bg-black/25 px-5 text-sm text-white backdrop-blur-md hover:bg-white/10">List your GPU <ArrowRight data-icon="inline-end" /></Button>
               </div>
+              <div className="mt-4 flex justify-center">
+  {ROOX_CONTRACT_ADDRESS ? (
+    <div className="flex max-w-full items-center gap-2 rounded-full border border-white/15 bg-black/35 px-4 py-2 font-mono text-[10px] uppercase tracking-[.1em] text-white/55 backdrop-blur-md">
+      <a
+        href={ROOX_CONTRACT_EXPLORER}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="truncate transition-colors hover:text-[#c8ff30]"
+        title={ROOX_CONTRACT_ADDRESS}
+      >
+        CA / {ROOX_CONTRACT_ADDRESS.slice(0, 6)}...
+        {ROOX_CONTRACT_ADDRESS.slice(-4)}
+      </a>
+
+      <span className="text-white/20">/</span>
+
+      <button
+        type="button"
+        onClick={() =>
+          void navigator.clipboard?.writeText(ROOX_CONTRACT_ADDRESS)
+        }
+        className="transition-colors hover:text-[#c8ff30]"
+        aria-label="Copy contract address"
+        title="Copy contract address"
+      >
+        Copy
+      </button>
+    </div>
+  ) : (
+    <div className="rounded-full border border-white/10 bg-black/25 px-4 py-2 font-mono text-[10px] uppercase tracking-[.1em] text-white/35 backdrop-blur-md">
+      CA / pending launch
+    </div>
+  )}
+</div>
               {note && <p className="mt-3 text-xs text-white/55">{note}</p>}
             </div>
             <div className="mt-auto grid grid-cols-2 border-y border-white/10 bg-black/20 backdrop-blur-sm sm:grid-cols-4">
