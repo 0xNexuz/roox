@@ -13,7 +13,7 @@ import { Documentation } from '@/components/documentation';
 import { HeroScene } from '@/components/hero-scene';
 
 const ROOX_CONTRACT_ADDRESS =
-  "0xYOUR_REAL_CONTRACT_ADDRESS";
+  "0xc7d1cd3666d0dd285a3d6df22ccaeb40c88792a3";
 
 const ROOX_CONTRACT_EXPLORER =
   `https://robinhoodchain.blockscout.com/address/${ROOX_CONTRACT_ADDRESS}`;
